@@ -13,6 +13,8 @@ root.render(
       <HashRouter>
           <Routes>
               <Route path="/" element={null} />
+              <Route path="/tic-tac-toe" element={null} />
+              <Route path="/rock-paper-scissors" element={null} />
               <Route path="/tic-tac-toe/rules" element={null} />
               <Route path="/tic-tac-toe/play" element={null} />
               <Route path="/rock-paper-scissors/rules" element={null} />
