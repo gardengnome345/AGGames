@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {HashRouter, Routes} from "react-router";
+import {HashRouter, Routes, Route} from "react-router";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -12,7 +12,11 @@ root.render(
   <React.StrictMode>
       <HashRouter>
           <Routes>
-
+              <Route path="/" element={null} />
+              <Route path="/tic-tac-toe/rules" element={null} />
+              <Route path="/tic-tac-toe/play" element={null} />
+              <Route path="/rock-paper-scissors/rules" element={null} />
+              <Route path="/rock-paper-scissors/play" element={null} />
           </Routes>
       </HashRouter>
 
