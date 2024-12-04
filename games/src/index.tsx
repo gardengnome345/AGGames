@@ -21,6 +21,7 @@ root.render(
                       <Route index element={null} />
                       <Route path="/rock-paper-scissors/play" element={null} />
                   </Route>
+                    <Route index element={null} />
               </Route>
           </Routes>
       </HashRouter>
