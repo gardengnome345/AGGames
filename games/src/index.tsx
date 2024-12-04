@@ -12,13 +12,16 @@ root.render(
   <React.StrictMode>
       <HashRouter>
           <Routes>
-              <Route path="/" element={null} />
-              <Route path="/tic-tac-toe" element={null} />
-              <Route path="/rock-paper-scissors" element={null} />
-              <Route path="/tic-tac-toe/rules" element={null} />
-              <Route path="/tic-tac-toe/play" element={null} />
-              <Route path="/rock-paper-scissors/rules" element={null} />
-              <Route path="/rock-paper-scissors/play" element={null} />
+                <Route path="/" element={null} >
+                <Route path="/tic-tac-toe" element={null} >
+                      <Route index element={null} />
+                      <Route path="/tic-tac-toe/play" element={null} />
+                  </Route>
+                  <Route path="/rock-paper-scissors" element={null} >
+                      <Route index element={null} />
+                      <Route path="/rock-paper-scissors/play" element={null} />
+                  </Route>
+              </Route>
           </Routes>
       </HashRouter>
 
