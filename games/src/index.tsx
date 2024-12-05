@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {HashRouter, Routes, Route} from "react-router";
+import {HashRouter, Routes, Route, Outlet} from "react-router";
 import reportWebVitals from './reportWebVitals';
+import {RPSGame} from "./RPSgame";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,14 +13,14 @@ root.render(
   <React.StrictMode>
       <HashRouter>
           <Routes>
-                <Route path="/" element={null} >
-                <Route path="/tic-tac-toe" element={null} >
+                <Route path="/" element={<Outlet/>} >
+                <Route path="/tic-tac-toe" element={<Outlet/>} >
                       <Route index element={null} />
                       <Route path="/tic-tac-toe/play" element={null} />
                   </Route>
-                  <Route path="/rock-paper-scissors" element={null} >
+                  <Route path="/rock-paper-scissors" element={<Outlet/>} >
                       <Route index element={null} />
-                      <Route path="/rock-paper-scissors/play" element={null} />
+                      <Route path="/rock-paper-scissors/play" element={<RPSGame/>} />
                   </Route>
                     <Route index element={null} />
               </Route>
