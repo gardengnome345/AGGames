@@ -5,6 +5,7 @@ import App from './App';
 import {HashRouter, Routes, Route, Outlet} from "react-router";
 import reportWebVitals from './reportWebVitals';
 import {RPSGame} from "./RPSgame";
+import {TTTGame} from "./TTTGame";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,7 +17,7 @@ root.render(
                 <Route path="/" element={<Outlet/>} >
                 <Route path="/tic-tac-toe" element={<Outlet/>} >
                       <Route index element={null} />
-                      <Route path="/tic-tac-toe/play" element={null} />
+                      <Route path="/tic-tac-toe/play" element={<TTTGame/>} />
                   </Route>
                   <Route path="/rock-paper-scissors" element={<Outlet/>} >
                       <Route index element={null} />
