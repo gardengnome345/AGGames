@@ -10,17 +10,7 @@ function Rock()
 export function RPSGame() {
     return (
         <>
-            <div style = {{color: "blue",display: 'flex', justifyContent: 'center', fontSize: 50}}>Rock - Paper - Scissors</div>
-
-            <div>
-                <ol>
-                    <li>Select one of the three items, the computer will also select one</li>
-                    <li>Paper beats Rock</li>
-                    <li>Rock beats Scissors</li>
-                    <li>Scissors beats Paper</li>
-                    <li>Two of the same item will result in a draw</li>
-                </ol>
-            </div>
+            <div style = {{color: "blue",display: 'flex', justifyContent: 'center', fontSize: 50}}>Rock - Paper - Scissors: Game</div>
 
             <div id="RPSButtons">
                 <button><img

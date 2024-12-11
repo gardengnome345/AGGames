@@ -7,6 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import {RPSGame} from "./RPSgame";
 import {TTTGame} from "./TTTGame";
 import {Navbar} from "./Navbar";
+import {TTT} from "./TTT";
+import {RPS} from "./RPS";
+import {Home} from "./Home";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,15 +19,15 @@ root.render(
       <HashRouter>
           <Routes>
                 <Route path="/" element={<Navbar/>} >
-                <Route path="/tic-tac-toe" element={<Outlet/>} >
+                <Route path="/tic-tac-toe" element={<TTT/>} >
                       <Route index element={null} />
                       <Route path="/tic-tac-toe/play" element={<TTTGame/>} />
                   </Route>
-                  <Route path="/rock-paper-scissors" element={<Outlet/>} >
+                  <Route path="/rock-paper-scissors" element={<RPS/>} >
                       <Route index element={null} />
                       <Route path="/rock-paper-scissors/play" element={<RPSGame/>} />
                   </Route>
-                    <Route index element={null} />
+                    <Route index element={<Home/>} />
               </Route>
           </Routes>
       </HashRouter>

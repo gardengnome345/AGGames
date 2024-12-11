@@ -14,12 +14,12 @@ export function Navbar() {
 
     return (
         <>
-        <div style={{backgroundColor: "red", position: 'fixed',}}>
-            <button style={{backgroundColor: "white",fontSize: 40}} className = {"nav"} onClick={() => navigate('/')}>Home</button>
-            <button style={{backgroundColor: "white",fontSize: 40}} className = {"nav"} onClick={() => navigate('/tic-tac-toe')}>Tic-Tac-Toe</button>
-            <button style={{backgroundColor: "white",fontSize: 40}} className = {"nav"} onClick={() => navigate('/tic-tac-toe/play')}>Tic-Tac-Toe: Play</button>
-            <button style={{backgroundColor: "white",fontSize: 40}} className = {"nav"} onClick={() => navigate('/rock-paper-scissors')}>Rock-Paper-Scissors</button>
-            <button style={{backgroundColor: "white",fontSize: 40}} className = {"nav"} onClick={() => navigate('/rock-paper-scissors/play')}>Rock-Paper-Scissors: Play</button>
+        <div style={{backgroundColor: "red", display: "flex", justifyContent: "center"}}>
+            <button style={{backgroundColor: "white",fontSize: 15, width:" 20%", height: "50px"}} className = {"nav"} onClick={() => navigate('/')}>Home</button>
+            <button style={{backgroundColor: "white",fontSize: 15, width:" 20%", height: "50px"}} className = {"nav"} onClick={() => navigate('/tic-tac-toe')}>Tic-Tac-Toe</button>
+            <button style={{backgroundColor: "white",fontSize: 15, width:" 20%", height: "50px"}} className = {"nav"} onClick={() => navigate('/tic-tac-toe/play')}>Tic-Tac-Toe: Play</button>
+            <button style={{backgroundColor: "white",fontSize: 15, width:" 20%", height: "50px"}} className = {"nav"} onClick={() => navigate('/rock-paper-scissors')}>Rock-Paper-Scissors</button>
+            <button style={{backgroundColor: "white",fontSize: 15, width:" 20%", height: "50px"}} className = {"nav"} onClick={() => navigate('/rock-paper-scissors/play')}>Rock-Paper-Scissors: Play</button>
         </div>
 
         <div><Outlet/></div>
