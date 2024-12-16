@@ -10,6 +10,8 @@ import {Navbar} from "./Navbar";
 import {TTT} from "./TTT";
 import {RPS} from "./RPS";
 import {Home} from "./Home";
+import {GithubSearch} from "./GithubSearch";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +21,7 @@ root.render(
       <HashRouter>
           <Routes>
                 <Route path="/" element={<Navbar/>} >
+                    <Route path="/githubsearch" element={<GithubSearch/>} />
                 <Route path="/tic-tac-toe" element={<TTT/>} >
                       <Route index element={null} />
                       <Route path="/tic-tac-toe/play" element={<TTTGame/>} />
