@@ -8,12 +8,12 @@ import {HashRouter, Routes, Route, Outlet} from "react-router";
 
 export function GithubSearch()
 {
-    const [users, setUsers] = useState(null);
+    const [users, setUsers]: [any[], any] = useState([]);
     useEffect(() => {
-        fetch(`https://api.github.com/search/users?g=${"wiz"}`)
+        fetch(`https://api.github.com/search/users?g=${"wiz"}%20in:login`)
             .then((response) => response.json())
             .then((data) => {
-                setUsers(data[0]);
+                setUsers(data.items);
                 console.log(data);
             })
             .catch((error) => console.log(error));
@@ -22,6 +22,9 @@ export function GithubSearch()
     return(
        <> <div>
            <p>users</p>
+           <ul>
+               {users.map(user =>(<li>{user.login}</li>))}
+           </ul>
        </div>
        </>
     )

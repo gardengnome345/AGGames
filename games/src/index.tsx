@@ -20,8 +20,11 @@ root.render(
   <React.StrictMode>
       <HashRouter>
           <Routes>
+              <Route path ="/githubsearch" element={<GithubSearch />}></Route>
+
+
                 <Route path="/" element={<Navbar/>} >
-                    <Route path="/githubsearch" element={<GithubSearch/>} />
+
                 <Route path="/tic-tac-toe" element={<TTT/>} >
                       <Route index element={null} />
                       <Route path="/tic-tac-toe/play" element={<TTTGame/>} />
