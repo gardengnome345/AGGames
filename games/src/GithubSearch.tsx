@@ -4,7 +4,17 @@ import './index.css';
 import App from './App';
 import {HashRouter, Routes, Route, Outlet} from "react-router";
 
-
+function Display({name, pfp}: {name: string, pfp: string})
+{
+    return(
+        <>
+            <div>
+                <img src = {pfp} alt = "profilepic"/>
+                <p>{name}</p>
+            </div>
+        </>
+    )
+}
 
 export function GithubSearch()
 {
@@ -20,12 +30,13 @@ export function GithubSearch()
     }, []);
 
     return(
-       <> <div>
-           <p>users</p>
-           <ul>
-               {users.map(user =>(<li>{user.login}</li>))}
-           </ul>
-       </div>
+       <>
+           <div>
+           <p>Users</p>
+                <ul>
+                    {users.map(user => (<Display name={user.login} pfp={user.avatar_url}></Display>))}
+                </ul>
+           </div>
        </>
     )
 }
