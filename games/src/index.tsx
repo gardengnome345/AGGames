@@ -11,6 +11,7 @@ import {TTT} from "./TTT";
 import {RPS} from "./RPS";
 import {Home} from "./Home";
 import {GithubSearch} from "./GithubSearch";
+import {WeatherApp} from "./WeatherApp";
 
 
 const root = ReactDOM.createRoot(
@@ -21,7 +22,7 @@ root.render(
       <HashRouter>
           <Routes>
               <Route path ="/githubsearch" element={<GithubSearch />}></Route>
-
+              <Route path ="/weatherapp" element={<WeatherApp />}></Route>
 
                 <Route path="/" element={<Navbar/>} >
 

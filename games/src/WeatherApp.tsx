@@ -16,25 +16,25 @@ function Display({name, pfp}: {name: string, pfp: string})
     )
 }
 
-export function GithubSearch()
+export function WeatherApp()
 {
-    const [users, setUsers]: [any[], any] = useState([]);
-    const [username, setUsername] = useState("");
+    const [addresses, setAddresses]: [any[], any] = useState([]);
+    const [address] = useState("");
     const [test, setTest] = useState("");
     useEffect(() => {
-        fetch(`https://api.github.com/search/users?q=${username}%20in:login`)
+        fetch(`https://api.geoapify.com/v1/geocode/search?text=${address}&format=json&apiKey=b8568cb9afc64fad861a69edbddb2658`)
             .then((response) => response.json())
             .then((data) => {
-                setUsers(data.items);
+                setAddresses(data.items);
                 console.log(data);
             })
             .catch((error) => console.log(error));
-    }, [username]);
+    }, [address]);
 
 
     function Display2()
     {
-        setUsername(test)
+        setAddresses(test)
     }
 
     function Display3()
@@ -42,24 +42,24 @@ export function GithubSearch()
         return(
             <>
                 <div>
-                    <p>Users</p>
+                    <p>Forecast for</p>
                     <ul>
-                        {users && users.map(user => (<Display name={user.login} pfp={user.avatar_url}></Display>))}
+                        {addresses && addresses.map(address => (<Display name={address.login} pfp={address.name}></Display>))}
                     </ul>
                 </div>
             </>)
     }
 
     return(
-       <>
-           <div>
-                <h1> Github Search</h1>
+        <>
+            <div>
+                <h1> Weather App</h1>
                 <input type = "text" onChange={(e) => setTest(e.target.value)}></input>
                 <button onClick = {Display2}>Search</button>
                 <p></p>
                 <Display3></Display3>
-           </div>
-       </>
+            </div>
+        </>
     )
 }
 
