@@ -46,7 +46,43 @@ export function WeatherApp()
 
     return(
         <>
+            <div style = {{}}>
+                <div>
+                    {period.map(period => (<Weather detail = {period.setPeriod} short = {period.setPeriod} icon = {period.icon}
+                        name = {period.name} precip = {period.setPeriod} temp = {period})
+                </div>
+            </div>
+        </>
+    )
+}
 
+function Weather({detail, short, icon, name, precip,temp}:
+{
+    detail: string;
+    short: string;
+    icon: string;
+    name: string;
+    precip: string;
+    temp: number;
+})
+{
+    return(
+        <>
+            <h1>
+                <img style = {{width: "200px"}} src = {icon} alt = "avatar"/>
+            </h1>
+            <h2>
+                {detail}
+            </h2>
+            <h3>
+                {short}
+            </h3>
+            <h4>
+                {name}
+            </h4>
+            <h5>
+                {temp}
+            </h5>
         </>
     )
 }
