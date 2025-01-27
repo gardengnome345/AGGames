@@ -10,6 +10,7 @@ export function WeatherApp()
     const [cords, setCords] = useState({x: 0, y: 0});
     const [api, setApi] = useState("");
     const [period, setPeriod] = useState<any[]>([]);
+    const [update, setUpdate] = useState("");
 
     useEffect(() => {
         fetch(`https://api.geoapify.com/v1/geocode/search?text=${address}&format=json&apiKey=b8568cb9afc64fad861a69edbddb2658`)
@@ -49,14 +50,15 @@ export function WeatherApp()
             <div style = {{}}>
                 <div>
                     {period.map(period => (<Weather detail = {period.setPeriod} short = {period.setPeriod} icon = {period.icon}
-                        name = {period.name} precip = {period.setPeriod} temp = {period})
+                        name = {period.name} precip = {period.setPeriod} temp = {period.setPeriod} time = {update}></Weather>
+                        ))}
                 </div>
             </div>
         </>
     )
 }
 
-function Weather({detail, short, icon, name, precip,temp}:
+function Weather({detail, short, icon, name, precip, temp, time}:
 {
     detail: string;
     short: string;
@@ -64,6 +66,7 @@ function Weather({detail, short, icon, name, precip,temp}:
     name: string;
     precip: string;
     temp: number;
+    time: string;
 })
 {
     return(
